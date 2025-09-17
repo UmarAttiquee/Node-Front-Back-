@@ -1,0 +1,19 @@
+show dbs     show all databases
+use mySchoolDB    create Database
+db.createCollection("students")  //create database Collection
+db.students.drop()
+db.students.renameCollection("students_table")
+db.students_table.insertOne({"status" : 1 , "msg" : "Hellow world"})
+db.students_table.insertMany([{"status" : 1 , "msg" : "Bahi jan"},{"name" : "Hamza RAshid"}])
+ctrl+r  show the db
+
+
+Show All data
+db.students_table.find().pretty()
+db.students_table.find({"name": "Hamza RAshid"})
+db.students_table.findOne({_id : ObjectId('68ba9af667362ebbfef3dc6f')})
+
+
+db.students_table.deleteOne({_id : ObjectId('68ba9af667362ebbfef3dc6f')})
+db.students_table.updateOne({_id: ObjectId('68ba9af667362ebbfef3dc6e')} , {$set : {"msg" : "Wela log"}} )
+
